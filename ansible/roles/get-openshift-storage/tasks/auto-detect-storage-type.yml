@@ -20,7 +20,7 @@
 
 - set_fact:
     _storage_type: 'ocs'
-  when: _openshift_storage_classes.stdout is search("ocs-storagecluster-ceph-rbd")
+  when: _openshift_storage_classes.stdout is search("ocs-external-storagecluster-ceph-rbd")
 
 - set_fact:
     _storage_type: 'aws-elastic'
