@@ -3,7 +3,7 @@
     oc get sc -o jsonpath='{.items[*].metadata.name}'
   register: _openshift_storage_classes
 
-- name: Show found storage classes
+- name: Show found storage classes test
   debug:
     var: _openshift_storage_classes
 - set_fact:
