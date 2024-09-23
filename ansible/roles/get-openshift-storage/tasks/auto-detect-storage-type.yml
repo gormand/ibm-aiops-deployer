@@ -26,6 +26,9 @@
     _storage_type: 'aws-elastic'
   when: _openshift_storage_classes.stdout is search("efs-nfs-client")
 
+- set_fact:
+    _storage_type: 'ocs'
+
 - name: Fail if storage type could not be detected
   fail:
     msg: "Storage type could not be detected for storage_type auto. Make sure that the cluster has NFS, ODF (OCS), Elastic, or Portworx storage classes."
